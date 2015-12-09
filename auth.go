@@ -1,12 +1,13 @@
 package akita
 
+import "database/sql"
+
 // AuthConfig holds configuration parameters used when authenticating a user and
 
 // creating a secure cookie user session.
 type AuthConfig struct {
 	Secret               []byte
-	DataSourceDriven     string
-	DataSourceURL        string
+	db                   sql.DB
 	LoginRedirect        string
 	LoginSuccessRedirect string
 }
